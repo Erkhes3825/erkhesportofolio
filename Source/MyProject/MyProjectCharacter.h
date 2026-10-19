@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
 #include "Logging/LogMacros.h"
+#include "Blueprint/UserWidget.h"
 #include "MyProjectCharacter.generated.h"
 
 class UInputComponent;
@@ -22,6 +23,12 @@ UCLASS(abstract)
 class AMyProjectCharacter : public ACharacter
 {
 	GENERATED_BODY()
+protected:
+	virtual void BeginPlay() override;
+	UPROPERTY(EditAnywhere, BluePrintReadOnly, Category= "UI")
+	TSubclassOf<UUserWidget>CrosshairWidgetClass;
+	UPROPERTY()
+	UUserWidget* CrosshairWidgetInstance;
 
 	/** Pawn mesh: first person view (arms; seen only by self) */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Components", meta = (AllowPrivateAccess = "true"))

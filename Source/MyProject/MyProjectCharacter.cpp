@@ -118,3 +118,16 @@ void AMyProjectCharacter::DoJumpEnd()
 	// pass StopJumping to the character
 	StopJumping();
 }
+void AMyProjectCharacter::BeginPlay()
+{
+	Super::BeginPlay();
+
+	if (CrosshairWidgetClass)
+	{
+		CrosshairWidgetInstance = CreateWidget<UUserWidget>(GetWorld(), CrosshairWidgetClass);
+		if (CrosshairWidgetInstance)
+		{
+			CrosshairWidgetInstance->AddToViewport();
+		}
+	}
+}
