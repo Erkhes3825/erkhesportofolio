@@ -16,6 +16,8 @@ class MYPROJECT_API ASwitchActor1 : public AActor
 public:
 	ASwitchActor1();
 
+bool IsSwitchedOn() const {return bIsOn}
+
 protected:
 	virtual void BeginPlay() override;
 
