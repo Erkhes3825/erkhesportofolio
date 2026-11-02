@@ -50,8 +50,8 @@ private:
 
 	UPROPERTY(EditAnywhere, Category = "Animation")
 	float MaxYawAngle = 90.0f;
-	UPROPERTY(EditInstanceOnly, Category="Gimmick")
-	TArray<AActor*>RequiredSwitches;
+	//UPROPERTY(EditInstanceOnly, Category="Gimmick")
+	//TArray<AActor*>RequiredSwitches;
  
 
 	bool bIsOpen = false;

@@ -48,24 +48,24 @@ void ADoorGimmick::BeginPlay()
 
 void ADoorGimmick::OnActivate_Implementation()
 {
-	if (RequiredSwitches.Num() > 0)
-	{
-		bool bAllSwitchesOn = true;
-		for (AActor* SwitchActor : RequiredSwitches)
-		{
-			ASwitchActor1* Switch = Cast<ASwitchActor1>(SwitchActor);
-			if (switch && !Switch->IsSwitchedOn())
-			{
-				bAllSwitchesOn = false;
-				break;
-			}
-		}
-		if (!bAllSwitchesOn)
-		{
-			return;
-		}
+	//if (RequiredSwitches.Num() > 0)
+	//{
+		//bool bAllSwitchesOn = true;
+		//for (AActor* SwitchActor : RequiredSwitches)
+		//{
+		///	ASwitchActor1* Switch = Cast<ASwitchActor1>(SwitchActor);
+		//	if (switch && !Switch->IsSwitchedOn())
+		//	{
+		//		bAllSwitchesOn = false;
+				//break;
+		//	}
+		//}
+		//if (!bAllSwitchesOn)
+		//{
+			//return;
+		//}
 
-	}
+	//}
 	
 	APlayerController* PC = UGameplayStatics::GetPlayerController(this, 0);
 	if (!PC) return;
