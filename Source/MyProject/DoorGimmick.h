@@ -24,6 +24,7 @@ protected:
 	virtual void OnActivate_Implementation() override;
 
 private:
+	void SetHUDVisibility(bool bVisible);
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components", meta = (AllowPrivateAccess = "true"))
 	TObjectPtr<USceneComponent> RootComp;
 
@@ -50,8 +51,8 @@ private:
 
 	UPROPERTY(EditAnywhere, Category = "Animation")
 	float MaxYawAngle = 90.0f;
-	//UPROPERTY(EditInstanceOnly, Category="Gimmick")
-	//TArray<AActor*>RequiredSwitches;
+	UPROPERTY(EditInstanceOnly, Category="Gimmick")
+	TArray<AActor*>RequiredSwitches;
  
 
 	bool bIsOpen = false;
