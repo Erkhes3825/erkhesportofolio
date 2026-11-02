@@ -108,7 +108,7 @@ void ADoorGimmick::ReturnCameraToPlayer()
 
 	PC->SetViewTargetWithBlend(PlayerCharacter, CameraBlendTime, EViewTargetBlendFunction::VTBlend_Cubic);
 
-	FTimerHandle EnableInputTimerHandle;
+	
 	GetWorldTimerManager().SetTimer(
 		EnableInputTimerHandle,
 		[PC]()
